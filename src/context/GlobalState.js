@@ -7,12 +7,7 @@ import AppReducer from "./AppReducer";
 const initalState = {
   accounts: [],
   error: null,
-  user: {
-    user: {
-      id: 6,
-      username: "enitan"
-    }
-  },
+  user: {},
   loading: true
 };
 
