@@ -12,16 +12,12 @@
   border-top-right-radius: 15px;
   background-color: yellow;
   width: 100vw;
-  height: 50%;
+  height: 55%;
 }
 
 .userField {
   margin: 1em 0 0 3em;
   font-weight: 600;
-}
-
-.userInput :nth-child(2) {
-  margin: 0;
 }
 
 .passwordBox {
@@ -33,6 +29,7 @@
   background-color: yellow;
   font-family: metropolis;
   border-bottom: 1px solid black;
+  width: 270px;
 }
 
 .submit {
@@ -45,7 +42,7 @@
   font-family: metropolis;
   font-weight: 700;
   font-size: 1.1em;
-  width: 70%;
+  width: 270px;
   cursor: pointer;
 }
 
