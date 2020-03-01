@@ -11,9 +11,8 @@
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   background-color: yellow;
-  /* width: 100vw; */
-  padding-top: 1em;
-  /* height: 55vh; */
+  padding-top: 0.5em;
+  padding-bottom: 1.5em;
 }
 
 .userField {
@@ -22,7 +21,7 @@
 }
 
 .passwordBox {
-  margin: 1em 0 0 2.5em;
+  margin: 0.1em 0 0 2.5em;
 }
 
 .userInput {
