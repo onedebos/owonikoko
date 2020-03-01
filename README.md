@@ -1,68 +1,112 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# OwoNiKoko
 
-## Available Scripts
+In Nigeria, people generally have a few Bank Accounts. Remembering all those bank accounts especially for different people can be a battle. Here's a simple app that lets you keep everyone's bank accounts in one place so you can simply go to the app and copy and paste anytime you want to make a transfer or send one of your many account numbers to someone else. This app is designed for mobile view.
 
-In the project directory, you can run:
+![screenshot](./app_screenshot.png)
 
-### `yarn start`
+The app includes a Rails API that renders JSON to be consumed
+by React Views.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Built With
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- Rails
+- React Hooks
+- Context API
+- Axios
+- FontAwesomeIcons
 
-### `yarn test`
+## Live Demo
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[Live Demo Link]()
 
-### `yarn build`
+## Front-end Repo
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[Front end git repo](https://github.com/onedebos/owonikoko)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Getting Started
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**To get started, follow the instructions below**
 
-### `yarn eject`
+To get a local copy up and running follow these simple example steps.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- git clone the frontend repo
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+git clone https://github.com/onedebos/owonikoko
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- git clone the backend repo if you want to run the server on your local machine. Otherwise, skip the next 3 steps.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```
+git clone https://github.com/onedebos/owonikoko-api
+```
 
-## Learn More
+- cd into the backend repo and install the gems
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+bundle install
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- run the rails server on port 3001
 
-### Code Splitting
+```
+rails s -p 3001
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+- If you decide to run the server locally, cd into the frontend repo. Navigate to src/components/helper/apiUrl.js and change the API_URL string to
 
-### Analyzing the Bundle Size
+```
+http://localhost:3001
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+- run
 
-### Making a Progressive Web App
+```
+npm install
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+to install all packages. then
 
-### Advanced Configuration
+```
+npm start
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+- to start the app in the browser.
+
+### Prerequisites
+
+- Make sure to have Rails 6.0 and Ruby 2.5.1
+
+### Install
+
+Install the Ruby Gems required by rails
+
+```
+bundle install
+```
 
 ### Deployment
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+## Authors
 
-### `yarn build` fails to minify
+👤 **Adebola**
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- Github: [@githubhandle](https://github.com/onedebos)
+- Twitter: [@twitterhandle](https://twitter.com/debosthefirst)
+- Linkedin: [linkedin](https://www.linkedin.com/in/adebola-niran/)
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+
+Feel free to check the [issues page](issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+## 📝 License
+
+This project is [MIT](lic.url) licensed.

@@ -1,0 +1,73 @@
+.LoginContainer {
+  background-image: url("https://images.unsplash.com/photo-1508002366005-75a695ee2d17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=617&q=80");
+
+  height: 100vh;
+  background-position: right -20px bottom -70px;
+}
+
+.LoginForm {
+  position: absolute;
+  bottom: 0;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-color: yellow;
+  width: 100vw;
+  height: 50%;
+}
+
+.userField {
+  margin: 1.5em 0 0 3em;
+  font-weight: 600;
+}
+
+.userInput :nth-child(2) {
+  margin: 0;
+}
+
+.passwordBox {
+  margin: 1em 0 0 2.5em;
+}
+
+.userInput {
+  border: 0;
+  background-color: yellow;
+  font-family: metropolis;
+  border-bottom: 1px solid black;
+}
+
+.submit {
+  margin: 1.5em 2.5em 0 2.5em;
+  border: 0;
+  padding: 0.5em;
+  border-radius: 5px;
+  background-color: purple;
+  color: white;
+  font-family: metropolis;
+  font-weight: 700;
+  font-size: 1.1em;
+  width: 70%;
+  cursor: pointer;
+}
+
+.registerDiv {
+  margin-top: 1em;
+  text-align: center;
+}
+
+.register {
+  color: black;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.aboutApp {
+  margin: 0 2em;
+  text-align: center;
+}
+
+.aboutApp p {
+  text-align: center;
+  font-size: 1.3em;
+  font-weight: 600;
+  margin-bottom: 0;
+}
