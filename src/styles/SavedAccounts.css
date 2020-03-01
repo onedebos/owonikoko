@@ -1,5 +1,6 @@
 .savedAccountsContainer {
   background-color: yellow;
+  overflow: hidden;
 }
 .titleDiv {
   padding: 0.5em;
@@ -55,4 +56,5 @@
   position: absolute;
   margin-top: -1.5em;
   cursor: pointer;
+  margin-right: 3em;
 }
