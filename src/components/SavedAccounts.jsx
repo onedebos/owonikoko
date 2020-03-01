@@ -4,6 +4,7 @@ import { GlobalContext } from "../context/GlobalState";
 import Clipboard from "react-clipboard.js";
 import { Link } from "react-router-dom";
 import { Spinner } from "./Spinner";
+import "../styles/SavedAccounts.css";
 
 export const SavedAccounts = props => {
   const { deleteAccount, loading } = useContext(GlobalContext);
@@ -17,27 +18,54 @@ export const SavedAccounts = props => {
     account => account.user_id === user.user.id
   );
   const displayAccounts = filteredAccounts.map(account => (
-    <div key={uuidv4()}>
-      <div>{account.name}</div>
-      <div>{account.bank}</div>
-      <div>
-        {account.acc_no}
-        <Clipboard data-clipboard-text={account.acc_no}>copy</Clipboard>
+    <div key={uuidv4()} className="accountWrapper">
+      <div className="accountWrapperName">
+        <p className="accountName">{account.name}</p>
       </div>
-      <button onClick={() => deleteAccount(account.id)}>Delete</button>
+      <div className="accountWrapperBank">{account.bank}</div>
+      <div className="accountWrapperAccNo">
+        {account.acc_no}
+        <Clipboard data-clipboard-text={account.acc_no} className="copyIcon">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+          >
+            <path d="M22 6v16h-16v-16h16zm2-2h-20v20h20v-20zm-24 17v-21h21v2h-19v19h-2z" />
+          </svg>
+        </Clipboard>
+      </div>
+      <button className="delete" onClick={() => deleteAccount(account.id)}>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="14"
+          height="14"
+          viewBox="0 0 24 24"
+          fill="red"
+        >
+          <path d="M9 19c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm4 0c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm4 0c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm5-17v2h-20v-2h5.711c.9 0 1.631-1.099 1.631-2h5.315c0 .901.73 2 1.631 2h5.712zm-3 4v16h-14v-16h-2v18h18v-18h-2z" />
+        </svg>
+      </button>
     </div>
   ));
   return (
     <div>
-      {loading === true ? (
-        <Spinner />
-      ) : displayAccounts.length < 1 ? (
-        <div>
-          No saved accounts. <Link to="/newkoko">create one? </Link>
+      <div className="savedAccountsContainer">
+        <div className="titleDiv">
+          <h2 className="savedAccountsTitle">Saved accounts.</h2>
         </div>
-      ) : (
-        displayAccounts
-      )}
+
+        {loading === true ? (
+          <Spinner />
+        ) : displayAccounts.length < 1 ? (
+          <div>
+            No saved accounts. <Link to="/newkoko">create one? </Link>
+          </div>
+        ) : (
+          <div className="accountsWrapper">{displayAccounts}</div>
+        )}
+      </div>
     </div>
   );
 };

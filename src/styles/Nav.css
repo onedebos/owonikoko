@@ -1,0 +1,30 @@
+.navContainer {
+  bottom: 0;
+  position: absolute;
+  background-color: yellow;
+  width: 100vw;
+  padding-top: 1em;
+}
+
+.nav {
+  margin-right: 2em;
+  color: black;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.navWrap {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* .navLinkWrap {
+  border-radius: 10px;
+  width: 90px;
+  margin-right: 0.5em;
+  padding: 0.5em;
+  text-align: center;
+  background-color: purple;
+} */

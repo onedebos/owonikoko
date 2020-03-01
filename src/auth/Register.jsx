@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import axios from "axios";
 import { GlobalContext } from "../context/GlobalState";
+import { Link } from "react-router-dom";
 import API_URL from "../helpers/API_CALL";
 
 export const Register = props => {
@@ -47,32 +48,57 @@ export const Register = props => {
     }
   };
   return (
-    <div>
+    <div className="LoginContainer">
       <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="username">Username: </label>
-          <input
-            type="text"
-            value={username}
-            onChange={e => setUsername(e.target.value.toLowerCase())}
-          ></input>
-        </div>
-        <div>
-          <label htmlFor="password">Password: </label>
+        <div className="LoginForm">
+          <div className="aboutApp">
+            <p>OwoNiKoko</p>
+            <small>Never forget account numbers again!</small>
+          </div>
+          <div className="userField">
+            <label htmlFor="username">Username: </label>
+            <div>
+              <input
+                type="text"
+                value={username}
+                className="userInput"
+                onChange={e => setUsername(e.target.value)}
+              ></input>
+            </div>
+          </div>
+          <div className="userField">
+            <label htmlFor="password">Password: </label>
+            <div>
+              <input
+                className="userInput"
+                id="password"
+                type="password"
+                onChange={e => setPassword(e.target.value)}
+                value={password}
+              ></input>
+            </div>
+          </div>
+          <div className="passwordBox">
+            <input
+              className="checkPassword"
+              type="checkbox"
+              onClick={() => showPasswordToggler()}
+            />
+            <span className="myCheckbox"></span>
+            <label htmlFor="see password">show password</label>
+          </div>
+          <button type="submit" className="submit">
+            Sign Up
+          </button>
+          <div className="registerDiv">
+            Already have an account?,
+            <Link to="/" className="register">
+              &nbsp;log in!
+            </Link>
+          </div>
 
-          <input
-            type="password"
-            id="password"
-            onChange={e => setPassword(e.target.value)}
-            value={password}
-          ></input>
+          {error.length > 0 ? error : ""}
         </div>
-        <div>
-          <input type="checkbox" onClick={() => showPasswordToggler()} />
-          <label htmlFor="see password">Show password</label>
-        </div>
-        <button type="submit">Sign up</button>
-        {error.length > 0 ? error : ""}
       </form>
     </div>
   );

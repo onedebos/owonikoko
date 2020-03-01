@@ -9,9 +9,9 @@ export const Spinner = () => {
         cx="25"
         cy="25"
         r="20"
-        fill="black"
-        // change to none, spinner by https://codepen.io/supah/pen/BjYLdWs
+        fill="none"
         strokeWidth="5"
+        //spinne by https: //codepen.io/supah/pen/BjYLdWs
       ></circle>
     </svg>
   );

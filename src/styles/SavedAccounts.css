@@ -1,0 +1,54 @@
+.savedAccountsContainer {
+  background-color: yellow;
+}
+.titleDiv {
+  padding: 0.5em;
+}
+.savedAccountsTitle {
+  margin: 1em 0 0 1em;
+  color: black;
+}
+.accountsWrapper {
+  height: 100%;
+  padding: 0 0.5em;
+  margin-top: 1em;
+  background-color: white;
+  margin-top: 0.5em;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+}
+
+.accountWrapper {
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid lightgrey;
+}
+
+.accountWrapperName p {
+  margin: 0;
+  margin-left: 1em;
+  margin-top: 0.5em;
+  font-weight: 700;
+  font-size: 1.5em;
+}
+
+.accountWrapperBank {
+  margin-left: 1.5em;
+}
+
+.accountWrapperAccNo {
+  margin-left: 1.5em;
+}
+
+.copyIcon {
+  border: 0;
+  background-color: white;
+}
+
+.delete {
+  border: 0;
+  background-color: white;
+  right: 0;
+  position: absolute;
+  margin-top: -1.5em;
+}

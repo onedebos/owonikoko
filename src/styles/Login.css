@@ -16,7 +16,7 @@
 }
 
 .userField {
-  margin: 1.5em 0 0 3em;
+  margin: 1em 0 0 3em;
   font-weight: 600;
 }
 
@@ -36,7 +36,7 @@
 }
 
 .submit {
-  margin: 1.5em 2.5em 0 2.5em;
+  margin: 1em 2.5em 0 2.5em;
   border: 0;
   padding: 0.5em;
   border-radius: 5px;
@@ -50,7 +50,7 @@
 }
 
 .registerDiv {
-  margin-top: 1em;
+  margin-top: 0.5em;
   text-align: center;
 }
 
@@ -70,4 +70,5 @@
   font-size: 1.3em;
   font-weight: 600;
   margin-bottom: 0;
+  color: rgb(66, 5, 116);
 }

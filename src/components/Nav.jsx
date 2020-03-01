@@ -3,6 +3,7 @@ import API_URL from "../helpers/API_CALL";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { GlobalContext } from "../context/GlobalState";
+import "../styles/Nav.css";
 
 export const Nav = props => {
   const { storeUser, user } = useContext(GlobalContext);
@@ -18,17 +19,28 @@ export const Nav = props => {
     storeUser({});
   };
   return (
-    <div>
+    <div className="navContainer">
       {!user.user ? (
         ""
       ) : (
-        <div>
-          <Link to="/newkoko">New</Link>
-          <Link to="/savedkoko"> Saved</Link>
-          <Link to="/" onClick={() => handleLogoutClick()}>
-            {" "}
-            Logout
-          </Link>
+        <div className="navWrap">
+          <div className="navLinkWrap">
+            <Link to="/newkoko" className="nav">
+              New
+            </Link>
+          </div>
+          <div className="navLinkWrap">
+            <Link to="/savedkoko" className="nav">
+              {" "}
+              Saved
+            </Link>
+          </div>
+          <div className="navLinkWrap">
+            <Link to="/" className="nav" onClick={() => handleLogoutClick()}>
+              {" "}
+              Logout
+            </Link>
+          </div>
         </div>
       )}
     </div>
