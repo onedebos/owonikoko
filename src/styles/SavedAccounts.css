@@ -34,10 +34,13 @@
 
 .accountWrapperBank {
   margin-left: 1.5em;
+  color: grey;
 }
 
 .accountWrapperAccNo {
   margin-left: 1.5em;
+  font-weight: 600;
+  color: purple;
 }
 
 .copyIcon {
@@ -51,4 +54,5 @@
   right: 0;
   position: absolute;
   margin-top: -1.5em;
+  cursor: pointer;
 }

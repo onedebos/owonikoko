@@ -1,0 +1,17 @@
+.addUserField {
+  padding-top: 3em;
+}
+
+.wrapField {
+  margin-left: 3em;
+  margin-bottom: 1em;
+}
+
+.addName {
+  border: 0;
+  border-bottom: 1px solid black;
+}
+
+input {
+  font-family: metropolis;
+}
