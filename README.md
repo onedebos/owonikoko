@@ -17,7 +17,7 @@ by React Views.
 
 ## Live Demo
 
-[Live Demo Link]()
+[Live Demo Link](https://kind-edison-586550.netlify.com/)
 
 ## Front-end Repo
 
