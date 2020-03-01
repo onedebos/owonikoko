@@ -91,9 +91,9 @@ export const Register = props => {
             Sign Up
           </button>
           <div className="registerDiv">
-            Already have an account?,
+            Already have an account?
             <Link to="/" className="register">
-              &nbsp;log in!
+              &nbsp;Log in!
             </Link>
           </div>
 

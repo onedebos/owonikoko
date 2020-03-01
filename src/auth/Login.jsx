@@ -97,7 +97,7 @@ export const Login = props => {
             Sign in
           </button>
           <div className="registerDiv">
-            No account?,
+            No account?
             <Link to="/register" className="register">
               &nbsp;Sign up!
             </Link>
