@@ -11,8 +11,9 @@
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   background-color: yellow;
-  width: 100vw;
-  height: 60vh;
+  /* width: 100vw; */
+  padding-top: 1em;
+  /* height: 55vh; */
 }
 
 .userField {
