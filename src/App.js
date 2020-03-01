@@ -1,26 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { SavedAccounts } from "./components/SavedAccounts";
+import "./App.css";
+import { AddAccount } from "./components/AddAccount";
+import { Login } from "./auth/Login";
+import { Register } from "./auth/Register";
+import { GlobalProvider } from "./context/GlobalState";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Nav } from "./components/Nav";
 
-function App() {
+export const App = props => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <GlobalProvider>
+      <Router>
+        <Switch>
+          <Route exact path="/" render={props => <Login {...props} />} />
+          <Route
+            exact
+            path="/newkoko"
+            render={props => <AddAccount {...props} />}
+          />
+          <Route
+            exact
+            path="/savedkoko"
+            render={props => <SavedAccounts {...props} />}
+          />
+          <Route
+            exact
+            path="/register"
+            render={props => <Register {...props} />}
+          />
+        </Switch>
+        <Nav />
+      </Router>
+    </GlobalProvider>
   );
-}
-
-export default App;
+};
