@@ -3,6 +3,7 @@
 
   height: 100vh;
   background-position: right -20px bottom -70px;
+  overflow: hidden;
 }
 
 .LoginForm {
