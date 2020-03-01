@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { GlobalContext } from "../context/GlobalState";
 import Clipboard from "react-clipboard.js";
@@ -9,9 +9,6 @@ import "../styles/SavedAccounts.css";
 export const SavedAccounts = props => {
   const { deleteAccount, loading } = useContext(GlobalContext);
   const { accounts, user, getAccounts } = useContext(GlobalContext);
-  const [copy, setCopy] = useState("");
-
-  const copyAcc = () => {};
 
   useEffect(() => {
     getAccounts();
@@ -28,11 +25,7 @@ export const SavedAccounts = props => {
       <div className="accountWrapperBank">{account.bank}</div>
       <div className="accountWrapperAccNo">
         {account.acc_no}
-        <Clipboard
-          data-clipboard-text={account.acc_no}
-          className="copyIcon"
-          onClick={() => setCopy("copied")}
-        >
+        <Clipboard data-clipboard-text={account.acc_no} className="copyIcon">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="14"
