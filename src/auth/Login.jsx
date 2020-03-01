@@ -19,17 +19,13 @@ export const Login = props => {
   };
 
   const handleSubmit = e => {
-    const body = {
-      username: username.toLowerCase(),
-      password: password
-    };
-    console.log(body);
     e.preventDefault();
     axios
       .post(
         `${API_URL}/sessions`,
         {
-          body
+          username: username.toLowerCase(),
+          password: password
         },
         {
           withCredentials: true

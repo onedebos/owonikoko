@@ -18,16 +18,13 @@ export const Register = props => {
   };
 
   const handleSubmit = e => {
-    const body = {
-      username: username.toLowerCase(),
-      password: password
-    };
     e.preventDefault();
     axios
       .post(
         `${API_URL}/registrations`,
         {
-          body
+          username: username.toLowerCase(),
+          password: password
         },
         {
           withCredentials: true
