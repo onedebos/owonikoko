@@ -19,13 +19,17 @@ export const Login = props => {
   };
 
   const handleSubmit = e => {
+    const body = {
+      username: username.toLowerCase(),
+      password: password
+    };
+    console.log(body);
     e.preventDefault();
     axios
       .post(
         `${API_URL}/sessions`,
         {
-          username,
-          password
+          body
         },
         {
           withCredentials: true
@@ -68,7 +72,7 @@ export const Login = props => {
                 type="text"
                 value={username}
                 className="userInput"
-                onChange={e => setUsername(e.target.value.toLowerCase())}
+                onChange={e => setUsername(e.target.value)}
               ></input>
             </div>
           </div>

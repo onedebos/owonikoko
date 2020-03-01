@@ -18,13 +18,16 @@ export const Register = props => {
   };
 
   const handleSubmit = e => {
+    const body = {
+      username: username.toLowerCase(),
+      password: password
+    };
     e.preventDefault();
     axios
       .post(
         `${API_URL}/registrations`,
         {
-          username,
-          password
+          body
         },
         {
           withCredentials: true
@@ -62,7 +65,7 @@ export const Register = props => {
                 type="text"
                 value={username}
                 className="userInput"
-                onChange={e => setUsername(e.target.value.toLowerCase())}
+                onChange={e => setUsername(e.target.value)}
               ></input>
             </div>
           </div>
