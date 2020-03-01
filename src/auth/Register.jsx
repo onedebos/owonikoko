@@ -62,7 +62,7 @@ export const Register = props => {
                 type="text"
                 value={username}
                 className="userInput"
-                onChange={e => setUsername(e.target.value)}
+                onChange={e => setUsername(e.target.value.toLowerCase())}
               ></input>
             </div>
           </div>
