@@ -1,16 +1,23 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import axios from "axios";
 import { GlobalContext } from "../context/GlobalState";
 import { Link } from "react-router-dom";
 import { NotificationManager } from "react-notifications";
 import "../styles/Login.css";
+
 import API_URL from "../helpers/API_CALL";
 
 export const Login = props => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-
   const { storeUser } = useContext(GlobalContext);
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      props.history.push("/savedkoko");
+    }
+  }, []);
 
   const handleLogin = data => {
     props.history.push("/savedkoko");
