@@ -17,15 +17,19 @@ export const AddAccount = props => {
 
   useEffect(() => {
     const token = localStorage.getItem("token");
-    axios
-      .get(`${API_URL}/logged_in`, {
-        headers: {
-          Authorization: `Bearer ${token}`
-        }
-      })
-      .then(response => {
-        userIsLoggedIn(response.data);
-      });
+    if (token) {
+      axios
+        .get(`${API_URL}/logged_in`, {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        })
+        .then(response => {
+          userIsLoggedIn(response.data);
+        });
+    } else {
+      props.history.push("/");
+    }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
