@@ -1,6 +1,7 @@
 import React, { createContext, useReducer } from "react";
 import axios from "axios";
 import API_URL from "../helpers/API_CALL";
+import { NotificationManager } from "react-notifications";
 import AppReducer from "./AppReducer";
 
 // initial state
@@ -51,6 +52,7 @@ export const GlobalProvider = ({ children }) => {
         type: "DELETE_ACCOUNT",
         payload: id
       });
+      NotificationManager.error("Deleted!", "", 1500);
     } catch (err) {}
   }
 

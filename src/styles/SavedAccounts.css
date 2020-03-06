@@ -5,8 +5,21 @@
 .titleDiv {
   padding: 0.5em;
 }
+
+.uNamePar {
+  margin-left: 1.5em;
+  background-color: purple;
+  border-radius: 6px;
+  width: 100px;
+  padding: 0.5em;
+  color: white;
+}
+
+.uNameSpan {
+  font-weight: 700;
+}
 .savedAccountsTitle {
-  margin: 1em 0 0 1em;
+  margin: 0.5em 0 0 1em;
   color: black;
 }
 .accountsWrapper {
@@ -47,6 +60,10 @@
 .copyIcon {
   border: 0;
   background-color: white;
+}
+
+.copyIconSvg {
+  cursor: pointer;
 }
 
 .delete {

@@ -24,7 +24,6 @@ export const AddAccount = props => {
         }
       })
       .then(response => {
-        console.log(response.data);
         userIsLoggedIn(response.data);
       });
 
