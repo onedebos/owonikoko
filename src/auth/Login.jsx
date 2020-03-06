@@ -33,9 +33,8 @@ export const Login = props => {
       )
       .then(response => {
         if (response.data.status === "created") {
-          console.log(response.data);
-          localStorage.setItem("token", response.data.jwt);
           storeUser(response.data);
+          localStorage.setItem("token", response.data.jwt);
           handleSuccessfulAuth(response.data);
         }
       })

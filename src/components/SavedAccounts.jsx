@@ -23,7 +23,6 @@ export const SavedAccounts = props => {
         }
       })
       .then(response => {
-        console.log(response.data);
         userIsLoggedIn(response.data);
       });
     getAccounts();
