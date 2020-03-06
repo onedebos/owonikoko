@@ -10,7 +10,7 @@
   margin-left: 1.5em;
   background-color: purple;
   border-radius: 6px;
-  width: 100px;
+  width: 150px;
   padding: 0.5em;
   color: white;
 }
@@ -24,7 +24,7 @@
 }
 .accountsWrapper {
   height: 100%;
-  padding: 0 0.5em;
+  padding: 0.5em 0.5em;
   margin-top: 1em;
   background-color: white;
   margin-top: 0.5em;

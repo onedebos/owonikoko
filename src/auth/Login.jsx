@@ -2,13 +2,14 @@ import React, { useState, useContext } from "react";
 import axios from "axios";
 import { GlobalContext } from "../context/GlobalState";
 import { Link } from "react-router-dom";
+import { NotificationManager } from "react-notifications";
 import "../styles/Login.css";
 import API_URL from "../helpers/API_CALL";
 
 export const Login = props => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+
   const { storeUser } = useContext(GlobalContext);
 
   const handleLogin = data => {
@@ -20,6 +21,7 @@ export const Login = props => {
 
   const handleSubmit = e => {
     e.preventDefault();
+
     axios
       .post(
         `${API_URL}/sessions`,
@@ -39,7 +41,9 @@ export const Login = props => {
         }
       })
       .catch(() =>
-        setError("The username or passowrd you have entered is incorrect.")
+        NotificationManager.error(
+          "The username or passowrd you have entered is incorrect."
+        )
       );
   };
 
@@ -111,7 +115,7 @@ export const Login = props => {
                 </Link>
               </div>
 
-              {error.length > 0 ? error : ""}
+              {/* {error.length > 0 ? error : ""} */}
             </div>
           </form>
         </div>

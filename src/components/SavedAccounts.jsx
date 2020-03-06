@@ -4,9 +4,9 @@ import { GlobalContext } from "../context/GlobalState";
 import Clipboard from "react-clipboard.js";
 import { Link } from "react-router-dom";
 import { capitalize } from "../helpers/helperFunctions";
-import { Spinner } from "./Spinner";
 import { NotificationManager } from "react-notifications";
 import axios from "axios";
+import Skeleton from "react-loading-skeleton";
 import API_URL from "../helpers/API_CALL";
 import "../styles/SavedAccounts.css";
 
@@ -92,15 +92,16 @@ export const SavedAccounts = props => {
           <h2 className="savedAccountsTitle">Saved accounts.</h2>
         </div>
 
-        {loading === true ? (
-          <Spinner />
-        ) : displayAccounts.length < 1 && userLoaded ? (
-          <div className="accountsWrapper">
-            No saved accounts. <Link to="/newkoko">create one? </Link>
-          </div>
-        ) : (
-          <div className="accountsWrapper">{displayAccounts}</div>
-        )}
+        <div className="accountsWrapper">
+          {loading ? <Skeleton count="3" /> : displayAccounts}
+          {displayAccounts.length < 1 && userLoaded && !loading ? (
+            <div className="accountsWrapper">
+              No saved accounts. <Link to="/newkoko">create one? </Link>{" "}
+            </div>
+          ) : (
+            ""
+          )}
+        </div>
       </div>
     </div>
   );
