@@ -1,6 +1,6 @@
 # OwoNiKoko
 
-In Nigeria, people generally have a few Bank Accounts. Remembering all those bank accounts especially for different people can be a battle. Here's a simple app that lets you keep everyone's bank accounts in one place so you can simply go to the app and copy and paste anytime you want to make a transfer or send one of your many account numbers to someone else. This app is designed for mobile view.
+In Nigeria, people generally have a number of Bank Accounts. Remembering all those bank accounts especially for different people can be a battle. Here's a simple app that lets you keep everyone's bank accounts in one place so you can simply go to the app and copy and paste anytime you want to make a transfer or send one of your many account numbers to someone else. This app is designed for mobile view.
 
 ![screenshot](./app_screenshot.png)
 
