@@ -20,30 +20,26 @@ export const Nav = props => {
     localStorage.removeItem("token");
   };
   return (
-    <div className="navContainer">
-      {!user.user ? (
-        ""
-      ) : (
-        <div className="navWrap">
-          <div className="navLinkWrap">
-            <Link to="/newkoko" className="nav">
-              New
-            </Link>
-          </div>
-          <div className="navLinkWrap">
-            <Link to="/savedkoko" className="nav">
-              {" "}
-              Saved
-            </Link>
-          </div>
-          <div className="navLinkWrap">
-            <Link to="/" className="nav" onClick={() => handleLogoutClick()}>
-              {" "}
-              Logout
-            </Link>
-          </div>
+    <div className={!user.user ? "hideNav" : "navContainer"}>
+      <div className="navWrap">
+        <div className="navLinkWrap">
+          <Link to="/newkoko" className="nav">
+            New
+          </Link>
         </div>
-      )}
+        <div className="navLinkWrap">
+          <Link to="/savedkoko" className="nav">
+            {" "}
+            Saved
+          </Link>
+        </div>
+        <div className="navLinkWrap">
+          <Link to="/" className="nav" onClick={() => handleLogoutClick()}>
+            {" "}
+            Logout
+          </Link>
+        </div>
+      </div>
     </div>
   );
 };

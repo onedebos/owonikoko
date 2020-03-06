@@ -34,6 +34,7 @@ export const Login = props => {
       .then(response => {
         if (response.data.status === "created") {
           storeUser(response.data);
+          console.log(response.data);
           localStorage.setItem("token", response.data.jwt);
           handleSuccessfulAuth(response.data);
         }
@@ -54,8 +55,15 @@ export const Login = props => {
 
   return (
     <div className="LoginContainer">
-      <div className="largerScreeneGrid">
-        <div>
+      <div>
+        <div className="largerScreenGrid">
+          <div className="largerScreenImg">
+            <img
+              className="mainImg"
+              src="https://images.unsplash.com/photo-1508002366005-75a695ee2d17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=617&q=80"
+              alt="img from unsplash"
+            />
+          </div>
           <form onSubmit={handleSubmit}>
             <div className="LoginForm">
               <div className="aboutApp">
@@ -98,21 +106,15 @@ export const Login = props => {
                 Sign in
               </button>
               <div className="registerDiv">
-                No account?
+                No account?&nbsp;
                 <Link to="/register" className="register">
-                  &nbsp;Sign up!
+                  Sign up!
                 </Link>
               </div>
 
               {error.length > 0 ? error : ""}
             </div>
           </form>
-        </div>
-        <div className="largerScreenImg">
-          <img
-            src="https://images.unsplash.com/photo-1508002366005-75a695ee2d17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=617&q=80"
-            alt="img from unsplash"
-          />
         </div>
       </div>
     </div>

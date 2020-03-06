@@ -4,8 +4,69 @@
     display: flex;
     grid-template-columns: 2fr 1fr;
   }
+
+  .mainImg {
+    object-fit: cover;
+    height: 100vh;
+  }
   .LoginContainer {
     background-image: none;
+    background-color: yellow;
+    overflow-y: hidden;
+  }
+
+  .hideNav {
+    display: none;
+  }
+
+  .LoginForm {
+    margin: 12em 23em;
+  }
+
+  .aboutApp p {
+    font-size: 3em;
+    margin: 0;
+    font-weight: 700;
+    color: rgb(66, 5, 116);
+  }
+
+  .aboutApp {
+    margin-bottom: 2em;
+  }
+
+  .userField {
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-bottom: 1em;
+  }
+
+  .checkPassword {
+    margin-right: 1em;
+  }
+  .userInput {
+    width: 350px;
+    background-color: yellow;
+    border: none;
+    border-bottom: 1px solid black;
+  }
+
+  .submit {
+    margin: 2em 0;
+    border: 0;
+    padding: 0.5em;
+    border-radius: 5px;
+    background-color: purple;
+    color: white;
+    font-family: metropolis;
+    font-weight: 700;
+    font-size: 1.1em;
+    width: 360px;
+    cursor: pointer;
+  }
+
+  .registerDiv {
+    margin: 0 6em;
+    font-weight: 600;
   }
 }
 
