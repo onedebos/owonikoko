@@ -1,71 +1,88 @@
-.LoginContainer {
-  background-image: url("https://images.unsplash.com/photo-1508002366005-75a695ee2d17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=617&q=80");
-  min-height: 100vh;
-  background-position: right -20px bottom -70px;
-  background-repeat: no-repeat;
+/* /* desktop styles * */
+@media (min-width: 575px) {
+  .largerScreenGrid {
+    display: flex;
+    grid-template-columns: 2fr 1fr;
+  }
+  .LoginContainer {
+    background-image: none;
+  }
 }
 
-.LoginForm {
-  position: absolute;
-  bottom: 0;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-  background-color: yellow;
-  padding-top: 0.5em;
-  padding-bottom: 1.5em;
-}
+@media screen and (min-device-width: 350px) and (max-device-width: 575px) {
+  .largerScreenImg {
+    display: none;
+  }
 
-.userField {
-  margin: 1em 0 0 3em;
-  font-weight: 600;
-}
+  .LoginContainer {
+    background-image: url("https://images.unsplash.com/photo-1508002366005-75a695ee2d17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=617&q=80");
+    min-height: 100vh;
+    background-position: right -20px bottom -70px;
+    background-repeat: no-repeat;
+  }
 
-.passwordBox {
-  margin: 0.1em 0 0 2.5em;
-}
+  .LoginForm {
+    position: absolute;
+    bottom: 0;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-color: yellow;
+    padding-top: 0.5em;
+    padding-bottom: 1.5em;
+  }
 
-.userInput {
-  border: 0;
-  background-color: yellow;
-  font-family: metropolis;
-  border-bottom: 1px solid black;
-  width: 270px;
-}
+  .userField {
+    margin: 1em 0 0 3em;
+    font-weight: 600;
+  }
 
-.submit {
-  margin: 1em 2.5em 0 2.5em;
-  border: 0;
-  padding: 0.5em;
-  border-radius: 5px;
-  background-color: purple;
-  color: white;
-  font-family: metropolis;
-  font-weight: 700;
-  font-size: 1.1em;
-  width: 270px;
-  cursor: pointer;
-}
+  .passwordBox {
+    margin: 0.1em 0 0 2.5em;
+  }
 
-.registerDiv {
-  margin-top: 0.5em;
-  text-align: center;
-}
+  .userInput {
+    border: 0;
+    background-color: yellow;
+    font-family: metropolis;
+    border-bottom: 1px solid black;
+    width: 270px;
+  }
 
-.register {
-  color: black;
-  font-weight: 700;
-  text-decoration: none;
-}
+  .submit {
+    margin: 1em 2.5em 0 2.5em;
+    border: 0;
+    padding: 0.5em;
+    border-radius: 5px;
+    background-color: purple;
+    color: white;
+    font-family: metropolis;
+    font-weight: 700;
+    font-size: 1.1em;
+    width: 270px;
+    cursor: pointer;
+  }
 
-.aboutApp {
-  margin: 0 2em;
-  text-align: center;
-}
+  .registerDiv {
+    margin-top: 0.5em;
+    text-align: center;
+  }
 
-.aboutApp p {
-  text-align: center;
-  font-size: 1.3em;
-  font-weight: 600;
-  margin-bottom: 0;
-  color: rgb(66, 5, 116);
+  .register {
+    color: black;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .aboutApp {
+    margin: 0 2em;
+    text-align: center;
+  }
+
+  .aboutApp p {
+    text-align: center;
+    font-size: 1.3em;
+    font-weight: 600;
+    margin-bottom: 0;
+    color: rgb(66, 5, 116);
+  }
 }

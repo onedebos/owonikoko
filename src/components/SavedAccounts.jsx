@@ -4,13 +4,28 @@ import { GlobalContext } from "../context/GlobalState";
 import Clipboard from "react-clipboard.js";
 import { Link } from "react-router-dom";
 import { Spinner } from "./Spinner";
+import axios from "axios";
+import API_URL from "../helpers/API_CALL";
 import "../styles/SavedAccounts.css";
 
 export const SavedAccounts = props => {
   const { deleteAccount, loading } = useContext(GlobalContext);
   const { accounts, user, getAccounts } = useContext(GlobalContext);
 
+  const { userIsLoggedIn } = useContext(GlobalContext);
+
   useEffect(() => {
+    const token = localStorage.getItem("token");
+    axios
+      .get(`${API_URL}/logged_in`, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      })
+      .then(response => {
+        console.log(response.data);
+        userIsLoggedIn(response.data);
+      });
     getAccounts();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

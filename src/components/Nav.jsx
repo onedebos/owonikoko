@@ -17,6 +17,7 @@ export const Nav = props => {
       })
       .catch(error => error);
     storeUser({});
+    localStorage.removeItem("token");
   };
   return (
     <div className="navContainer">

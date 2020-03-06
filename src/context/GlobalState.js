@@ -36,6 +36,14 @@ export const GlobalProvider = ({ children }) => {
       payload: data
     });
   }
+
+  function userIsLoggedIn(data) {
+    dispatch({
+      type: "STORE_USER",
+      payload: data
+    });
+  }
+
   async function deleteAccount(id) {
     try {
       await axios.delete(`${API_URL}/accounts/${id}`);
@@ -65,7 +73,8 @@ export const GlobalProvider = ({ children }) => {
         getAccounts,
         loading: state.loading,
         storeUser,
-        user: state.user
+        user: state.user,
+        userIsLoggedIn
       }}
     >
       {children}

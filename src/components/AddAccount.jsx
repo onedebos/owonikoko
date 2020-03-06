@@ -1,7 +1,9 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { GlobalContext } from "../context/GlobalState";
 import naijaBanks from "../helpers/NigerianBanks";
+import axios from "axios";
+import API_URL from "../helpers/API_CALL";
 import "../styles/AddAccount.css";
 
 export const AddAccount = props => {
@@ -10,6 +12,24 @@ export const AddAccount = props => {
   const [accountNo, setaccountNo] = useState("");
   const [category, setCategory] = useState("");
   const { addAccount, user } = useContext(GlobalContext);
+
+  const { userIsLoggedIn } = useContext(GlobalContext);
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    axios
+      .get(`${API_URL}/logged_in`, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      })
+      .then(response => {
+        console.log(response.data);
+        userIsLoggedIn(response.data);
+      });
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const displayNaijaBanks = naijaBanks.map(naijaBank => (
     <option key={uuidv4()}>{naijaBank.name}</option>
