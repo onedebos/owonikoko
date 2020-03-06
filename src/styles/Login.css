@@ -146,4 +146,7 @@
     margin-bottom: 0;
     color: rgb(66, 5, 116);
   }
+  .hideNav {
+    display: none;
+  }
 }
