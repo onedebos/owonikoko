@@ -4,7 +4,6 @@ import "./index.css";
 import { App } from "./App";
 import { GlobalProvider } from "./context/GlobalState";
 import * as serviceWorker from "./serviceWorker";
-
 require("typeface-metropolis");
 
 ReactDOM.render(

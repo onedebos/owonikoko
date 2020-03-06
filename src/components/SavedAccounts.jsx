@@ -19,20 +19,22 @@ export const SavedAccounts = props => {
 
   useEffect(() => {
     const token = localStorage.getItem("token");
-    axios
-      .get(`${API_URL}/logged_in`, {
-        headers: {
-          Authorization: `Bearer ${token}`
-        }
-      })
-      .then(response => {
-        if (token) {
+    if (token) {
+      axios
+        .get(`${API_URL}/logged_in`, {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        })
+        .then(response => {
           userIsLoggedIn(response.data);
           setUsername(response.data.user.username);
           getAccounts();
           setUserLoaded(true);
-        }
-      });
+        });
+    } else {
+      props.history.push("/");
+    }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
