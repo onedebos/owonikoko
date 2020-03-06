@@ -1,54 +1,18 @@
-import React, { useState, useContext } from "react";
-import axios from "axios";
-import { GlobalContext } from "../context/GlobalState";
+import React from "react";
 import { Link } from "react-router-dom";
-import API_URL from "../helpers/API_CALL";
 
-export const Register = props => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
-  const { storeUser } = useContext(GlobalContext);
-
-  const handleLogin = data => {
-    props.history.push("/savedkoko");
-  };
-  const handleSuccessfulAuth = data => {
-    handleLogin(data);
-  };
-
-  const handleSubmit = e => {
-    e.preventDefault();
-    axios
-      .post(
-        `${API_URL}/registrations`,
-        {
-          username: username.toLowerCase(),
-          password: password
-        },
-        {
-          withCredentials: true
-        }
-      )
-      .then(response => {
-        console.log(response.data);
-        if (response.data.status === "created") {
-          storeUser(response.data);
-          localStorage.setItem("token", response.data.jwt);
-          handleSuccessfulAuth(response.data);
-        }
-      })
-      .catch(() => setError("There was a problem signing you up."));
-  };
-
-  const showPasswordToggler = () => {
-    const passwordField = document.getElementById("password");
-    if (passwordField.type === "text") {
-      passwordField.type = "password";
-    } else {
-      passwordField.type = "text";
-    }
-  };
+export const AuthForm = (
+  handleSubmit,
+  username,
+  setUsername,
+  password,
+  setPassword,
+  showPasswordToggler,
+  submitText,
+  link,
+  linkText,
+  error
+) => {
   return (
     <div className="LoginContainer">
       <div>
@@ -99,16 +63,16 @@ export const Register = props => {
                 <label htmlFor="see password">show password</label>
               </div>
               <button type="submit" className="submit">
-                Sign up
+                {submitText}
               </button>
               <div className="registerDiv">
-                Already have an account?&nbsp;
-                <Link to="/" className="register">
-                  Sign in!
+                No account?&nbsp;
+                <Link to={link} className="register">
+                  {linkText}
                 </Link>
               </div>
 
-              {error.length > 0 ? error : ""}
+              {/* {error.length > 0 ? error : ""} */}
             </div>
           </form>
         </div>

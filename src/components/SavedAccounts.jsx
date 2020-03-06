@@ -82,7 +82,7 @@ export const SavedAccounts = props => {
         {loading === true ? (
           <Spinner />
         ) : displayAccounts.length < 1 ? (
-          <div>
+          <div className="accountsWrapper">
             No saved accounts. <Link to="/newkoko">create one? </Link>
           </div>
         ) : (
