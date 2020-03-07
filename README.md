@@ -14,6 +14,8 @@ by React Views.
 - Context API
 - Axios
 - FontAwesomeIcons
+- JWT
+- React skeleton
 
 ## Live Demo
 
