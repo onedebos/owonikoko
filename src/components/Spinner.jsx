@@ -12,7 +12,6 @@ export const Spinner = () => {
           r="20"
           fill="none"
           strokeWidth="5"
-          //spinner by https: //codepen.io/supah/pen/BjYLdWs
         ></circle>
       </svg>
     </div>
