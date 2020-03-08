@@ -36,6 +36,7 @@ export const GlobalProvider = ({ children }) => {
       type: "STORE_USER",
       payload: data
     });
+    console.log(data);
   }
 
   function userIsLoggedIn(data) {

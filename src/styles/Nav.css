@@ -1,6 +1,6 @@
 .navContainer {
   bottom: 0;
-  position: absolute;
+  position: fixed;
   background-color: yellow;
   width: 100vw;
   padding-top: 1em;
@@ -19,12 +19,3 @@
   margin: 0 auto;
   text-align: center;
 }
-
-/* .navLinkWrap {
-  border-radius: 10px;
-  width: 90px;
-  margin-right: 0.5em;
-  padding: 0.5em;
-  text-align: center;
-  background-color: purple;
-} */

@@ -19,6 +19,7 @@ export const SavedAccounts = props => {
 
   useEffect(() => {
     const token = localStorage.getItem("token");
+
     if (token) {
       axios
         .get(`${API_URL}/logged_in`, {
@@ -28,6 +29,7 @@ export const SavedAccounts = props => {
         })
         .then(response => {
           userIsLoggedIn(response.data);
+
           setUsername(response.data.user.username);
           getAccounts();
           setUserLoaded(true);
@@ -51,7 +53,7 @@ export const SavedAccounts = props => {
     displayAccounts = filteredAccounts.map(account => (
       <div key={uuidv4()} className="accountWrapper">
         <div className="accountWrapperName">
-          <p className="accountName">{account.name}</p>
+          <p className="accountName">{capitalize(account.name)}</p>
         </div>
         <div className="accountWrapperBank">{account.bank}</div>
         <div className="accountWrapperAccNo">
@@ -83,7 +85,6 @@ export const SavedAccounts = props => {
       </div>
     ));
   }
-
   return (
     <div>
       <div className="savedAccountsContainer">
@@ -95,7 +96,7 @@ export const SavedAccounts = props => {
         </div>
 
         <div className="accountsWrapper">
-          {loading ? <Skeleton count="3" /> : displayAccounts}
+          {!userLoaded ? <Skeleton count="3" /> : displayAccounts}
           {displayAccounts.length < 1 && userLoaded && !loading ? (
             <div className="accountsWrapper">
               No saved accounts. <Link to="/newkoko">create one? </Link>{" "}
