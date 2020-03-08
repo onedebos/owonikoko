@@ -2,11 +2,13 @@ import React, { useState, useContext } from "react";
 import axios from "axios";
 import { GlobalContext } from "../context/GlobalState";
 import { Link } from "react-router-dom";
+import { Spinner } from "../components/Spinner";
 import API_URL from "../helpers/API_CALL";
 
 export const Register = props => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [loggedInState, setLoggedInState] = useState();
   const [error, setError] = useState("");
   const { storeUser } = useContext(GlobalContext);
 
@@ -19,6 +21,8 @@ export const Register = props => {
 
   const handleSubmit = e => {
     e.preventDefault();
+    setLoggedInState("logging in");
+
     axios
       .post(
         `${API_URL}/registrations`,
@@ -31,7 +35,6 @@ export const Register = props => {
         }
       )
       .then(response => {
-        console.log(response.data);
         if (response.data.status === "created") {
           storeUser(response.data);
           localStorage.setItem("token", response.data.jwt);
@@ -51,6 +54,7 @@ export const Register = props => {
   };
   return (
     <div className="LoginContainer">
+      {loggedInState === "logging in" ? <Spinner /> : ""}
       <div>
         <div className="largerScreenGrid">
           <div className="largerScreenImg">

@@ -59,7 +59,9 @@ export const AddAccount = props => {
         <div className="accountsWrapper">
           <div className="wrapField">
             <div className="addUserField">
-              <label htmlFor="name">Name</label>
+              <label htmlFor="name">
+                <strong>Name</strong>
+              </label>
             </div>
             <div>
               <input
@@ -74,7 +76,9 @@ export const AddAccount = props => {
           </div>
           <div className="wrapField">
             <div>
-              <label htmlFor="bank">Bank:</label>
+              <label htmlFor="bank">
+                <strong>Bank</strong>
+              </label>
             </div>
 
             <select
@@ -88,25 +92,28 @@ export const AddAccount = props => {
           <div className="wrapField">
             <div>
               <label htmlFor="accountNo">
-                Account number:
-                <input
-                  className="addName"
-                  placeholder="1234567890"
-                  required
-                  type="text"
-                  value={accountNo}
-                  pattern="\d{10}"
-                  onChange={e => setaccountNo(e.target.value)}
-                  minLength="10"
-                  maxLength="10"
-                />
+                <strong>Account number</strong>
+                <div>
+                  <input
+                    className="addName"
+                    placeholder="1234567890"
+                    required
+                    type="text"
+                    value={accountNo}
+                    pattern="\d{10}"
+                    onChange={e => setaccountNo(e.target.value)}
+                    minLength="10"
+                    maxLength="10"
+                  />
+                </div>
               </label>
+              <small className="numHelp">enter a 10 digit account number</small>
             </div>
           </div>
           <div className="wrapField">
             <div>
               <label htmlFor="accountNo">
-                Is this your account?:
+                <strong>Is this your personal account?</strong>
                 <div>
                   <select
                     required

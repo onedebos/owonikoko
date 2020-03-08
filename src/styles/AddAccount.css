@@ -10,8 +10,17 @@
 .addName {
   border: 0;
   border-bottom: 1px solid black;
+  width: 90%;
 }
 
 input {
   font-family: metropolis;
+}
+
+input:focus {
+  border-bottom: 2px solid purple;
+}
+
+.numHelp {
+  color: grey;
 }

@@ -1,3 +1,9 @@
+.spinnerDiv {
+  background-color: white;
+  height: 100vh;
+  opacity: 0.6;
+}
+
 .spinner {
   animation: rotate 2s linear infinite;
   z-index: 2;
