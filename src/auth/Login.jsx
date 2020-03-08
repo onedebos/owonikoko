@@ -3,6 +3,7 @@ import axios from "axios";
 import { GlobalContext } from "../context/GlobalState";
 import { Link } from "react-router-dom";
 import { NotificationManager } from "react-notifications";
+import { Spinner } from "../components/Spinner";
 import "../styles/Login.css";
 
 import API_URL from "../helpers/API_CALL";
@@ -10,6 +11,7 @@ import API_URL from "../helpers/API_CALL";
 export const Login = props => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [loggedInState, setLoggedInState] = useState();
   const { storeUser } = useContext(GlobalContext);
 
   useEffect(() => {
@@ -28,6 +30,7 @@ export const Login = props => {
 
   const handleSubmit = e => {
     e.preventDefault();
+    setLoggedInState("logging in");
 
     axios
       .post(
@@ -42,6 +45,7 @@ export const Login = props => {
       )
       .then(response => {
         if (response.data.status === "created") {
+          setLoggedInState("logged in");
           storeUser(response.data);
           localStorage.setItem("token", response.data.jwt);
           handleSuccessfulAuth(response.data);
@@ -65,6 +69,7 @@ export const Login = props => {
 
   return (
     <div className="LoginContainer">
+      {loggedInState === "logging in" ? <Spinner /> : ""}
       <div>
         <div className="largerScreenGrid">
           <div className="largerScreenImg">
@@ -121,8 +126,6 @@ export const Login = props => {
                   Sign up!
                 </Link>
               </div>
-
-              {/* {error.length > 0 ? error : ""} */}
             </div>
           </form>
         </div>
