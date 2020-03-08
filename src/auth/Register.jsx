@@ -31,7 +31,6 @@ export const Register = props => {
         }
       )
       .then(response => {
-        console.log(response.data);
         if (response.data.status === "created") {
           storeUser(response.data);
           localStorage.setItem("token", response.data.jwt);
