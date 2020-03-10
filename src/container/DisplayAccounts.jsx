@@ -104,7 +104,7 @@ export const DisplayAccounts = ({ props, title, myAccount, accType }) => {
           {!userLoaded ? <Skeleton count="3" /> : displayAccounts}
           {displayAccounts.length < 1 && userLoaded && !loading ? (
             <div className="accountsWrapper">
-              No {accType} accounts. <Link to="/newkoko">create one? </Link>{" "}
+              No {accType} accounts. <Link to="/new">create one? </Link>{" "}
             </div>
           ) : (
             ""
