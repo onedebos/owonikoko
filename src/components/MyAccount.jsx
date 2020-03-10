@@ -2,8 +2,12 @@ import React from "react";
 import { DisplayAccounts } from "../container/DisplayAccounts";
 import "../styles/SavedAccounts.css";
 
-export const SavedAccounts = () => {
+export const MyAccount = () => {
   return (
-    <DisplayAccounts title="Saved Accounts" myAccount={false} accType="Saved" />
+    <DisplayAccounts
+      title="Your Personal Accounts"
+      myAccount={true}
+      accType="Personal"
+    />
   );
 };

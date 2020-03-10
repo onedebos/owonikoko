@@ -3,6 +3,7 @@ import axios from "axios";
 import { GlobalContext } from "../context/GlobalState";
 import { Link } from "react-router-dom";
 import { NotificationManager } from "react-notifications";
+import { showPasswordToggler } from "../helpers/helperFunctions";
 import { Spinner } from "../components/Spinner";
 import "../styles/Login.css";
 
@@ -17,12 +18,12 @@ export const Login = props => {
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
-      props.history.push("/savedkoko");
+      props.history.push("/all");
     }
   }, []);
 
   const handleLogin = data => {
-    props.history.push("/savedkoko");
+    props.history.push("/all");
   };
   const handleSuccessfulAuth = data => {
     handleLogin(data);
@@ -51,20 +52,12 @@ export const Login = props => {
           handleSuccessfulAuth(response.data);
         }
       })
-      .catch(() =>
+      .catch(() => {
         NotificationManager.error(
           "The username or passowrd you have entered is incorrect."
-        )
-      );
-  };
-
-  const showPasswordToggler = () => {
-    const passwordField = document.getElementById("password");
-    if (passwordField.type === "text") {
-      passwordField.type = "password";
-    } else {
-      passwordField.type = "text";
-    }
+        );
+        setLoggedInState("logged in");
+      });
   };
 
   return (

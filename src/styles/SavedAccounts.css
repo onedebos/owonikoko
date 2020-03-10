@@ -79,3 +79,16 @@
 .noAccounts {
   margin-top: 4em;
 }
+
+@media (min-width: 575px) {
+  .accountWrapperName {
+    font-size: 1.2em;
+  }
+  .accountWrapperBank {
+    font-size: 1.1em;
+  }
+
+  .accountWrapperAccNo {
+    font-size: 1.1em;
+  }
+}

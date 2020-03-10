@@ -24,3 +24,22 @@ input:focus {
 .numHelp {
   color: grey;
 }
+
+@media (min-width: 575px) {
+  .addName {
+    width: 30%;
+  }
+
+  .accountsWrapper {
+    text-align: center;
+  }
+
+  input {
+    text-align: center;
+  }
+
+  .wrapField {
+    margin-bottom: 2em;
+    font-size: 1.2em;
+  }
+}

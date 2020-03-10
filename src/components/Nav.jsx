@@ -23,14 +23,20 @@ export const Nav = props => {
     <div className={!user.user ? "hideNav" : "navContainer"}>
       <div className="navWrap">
         <div className="navLinkWrap">
-          <Link to="/newkoko" className="nav">
+          <Link to="/new" className="nav">
             New
           </Link>
         </div>
         <div className="navLinkWrap">
-          <Link to="/savedkoko" className="nav">
+          <Link to="/all" className="nav">
             {" "}
-            Saved
+            All
+          </Link>
+        </div>
+        <div className="navLinkWrap">
+          <Link to="/personal" className="nav">
+            {" "}
+            Personal
           </Link>
         </div>
         <div className="navLinkWrap">

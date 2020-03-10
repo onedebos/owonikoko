@@ -48,7 +48,7 @@ export const AddAccount = props => {
       user_id: user.user.id
     };
     addAccount(newAccount);
-    props.history.push("/savedkoko");
+    props.history.push("/all");
   };
   return (
     <div className="savedAccountsContainer">
