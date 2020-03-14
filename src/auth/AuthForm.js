@@ -18,7 +18,6 @@ export const Auth = ({
 }) => {
   return (
     <div className="LoginContainer">
-      {loggedInState === "logging in" ? <Spinner /> : ""}
       <div>
         <div className="largerScreenGrid">
           <div className="largerScreenImg">
@@ -67,6 +66,20 @@ export const Auth = ({
                 <label htmlFor="see password">show password</label>
               </div>
               <button type="submit" className="submit">
+                {loggedInState === "logging in" ? (
+                  <svg className="spin" viewBox="0 0 50 50">
+                    <circle
+                      className="path"
+                      cx="25"
+                      cy="25"
+                      r="20"
+                      fill="none"
+                      strokeWidth="5"
+                    ></circle>
+                  </svg>
+                ) : (
+                  ""
+                )}
                 {buttonToClick}
               </button>
               <div className="registerDiv">
