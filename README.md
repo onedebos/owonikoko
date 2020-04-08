@@ -4,6 +4,8 @@ In Nigeria, people generally have a number of bank accounts. Remembering all tho
 
 ![screenshot](https://res.cloudinary.com/onedebeos/image/upload/f_auto,q_auto/v1583532804/iphoneMockupOwonikoko_a7o3ru.png)
 
+![video-demo](./owonikoko-video.gif)
+
 The app includes a Rails API that renders JSON to be consumed
 by React Views.
 
