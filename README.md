@@ -2,9 +2,9 @@
 
 In Nigeria, people generally have a number of bank accounts. Remembering all those bank accounts especially for different people can be a battle. Here's a simple app that lets you keep everyone's bank accounts in one place so you can simply go to the app and copy and paste anytime you want to make a transfer or send one of your many account numbers to someone else. This app is designed for mobile view.
 
-![screenshot](https://res.cloudinary.com/onedebeos/image/upload/f_auto,q_auto/v1583532804/iphoneMockupOwonikoko_a7o3ru.png)
-
 ![video-demo](./owonikoko-video.gif)
+
+![screenshot](https://res.cloudinary.com/onedebeos/image/upload/f_auto,q_auto/v1583532804/iphoneMockupOwonikoko_a7o3ru.png)
 
 The app includes a Rails API that renders JSON to be consumed
 by React Views.
