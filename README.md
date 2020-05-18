@@ -1,6 +1,8 @@
 # OwoNiKoko
 
-In Nigeria, people generally have a number of Bank Accounts. Remembering all those bank accounts especially for different people can be a battle. Here's a simple app that lets you keep everyone's bank accounts in one place so you can simply go to the app and copy and paste anytime you want to make a transfer or send one of your many account numbers to someone else. This app is designed for mobile view.
+In Nigeria, people generally have a number of bank accounts. Remembering all those bank accounts especially for different people can be a battle. Here's a simple app that lets you keep everyone's bank accounts in one place so you can simply go to the app and copy and paste anytime you want to make a transfer or send one of your many account numbers to someone else. This app is designed for mobile view.
+
+![video-demo](./owonikoko-video.gif)
 
 ![screenshot](https://res.cloudinary.com/onedebeos/image/upload/f_auto,q_auto/v1583532804/iphoneMockupOwonikoko_a7o3ru.png)
 
@@ -86,8 +88,11 @@ Install the Ruby Gems required by rails
 ```
 bundle install
 ```
+### Automated Tests
+- Currently, there are no automated tests avaailable for this project. This will be implemented at a later date.
 
-### Deployment
+### Planned Features
+- A search bar to search through saved accounts.
 
 ## Authors
 
