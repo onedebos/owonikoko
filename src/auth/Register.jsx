@@ -35,7 +35,7 @@ export const Register = props => {
           username: username.toLowerCase(),
           password: password
         },
-        { withCredentials: false }
+        { withCredentials: true }
       )
       .then(response => {
         if (response.data.status === "created") {
