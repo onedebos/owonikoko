@@ -38,7 +38,7 @@ export const Login = props => {
           username: username.toLowerCase(),
           password: password
         },
-        { withCredentials: true }
+        { withCredentials: false }
       )
       .then(response => {
         if (response.data.status === "created") {
