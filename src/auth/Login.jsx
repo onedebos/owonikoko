@@ -32,16 +32,10 @@ export const Login = props => {
     setLoggedInState("logging in");
 
     axios
-      .post(
-        `${API_URL}/sessions`,
-        {
-          username: username.toLowerCase(),
-          password: password
-        },
-        {
-          withCredentials: true
-        }
-      )
+      .post(`${API_URL}/sessions`, {
+        username: username.toLowerCase(),
+        password: password
+      })
       .then(response => {
         if (response.data.status === "created") {
           setLoggedInState("logged in");

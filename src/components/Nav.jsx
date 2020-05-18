@@ -9,9 +9,7 @@ export const Nav = props => {
   const { storeUser, user } = useContext(GlobalContext);
   const handleLogoutClick = () => {
     axios
-      .delete(`${API_URL}/logout`, {
-        withCredentials: true
-      })
+      .delete(`${API_URL}/logout`)
       .then(() => {
         storeUser({});
       })

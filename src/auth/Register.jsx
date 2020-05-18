@@ -29,16 +29,10 @@ export const Register = props => {
     setLoggedInState("logging in");
 
     axios
-      .post(
-        `${API_URL}/registrations`,
-        {
-          username: username.toLowerCase(),
-          password: password
-        },
-        {
-          withCredentials: true
-        }
-      )
+      .post(`${API_URL}/registrations`, {
+        username: username.toLowerCase(),
+        password: password
+      })
       .then(response => {
         if (response.data.status === "created") {
           storeUser(response.data);

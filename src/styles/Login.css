@@ -2,17 +2,14 @@
 @media (min-width: 575px) {
   .largerScreenGrid {
     display: flex;
-    grid-template-columns: 2fr 1fr;
+    text-align: center;
   }
 
-  .mainImg {
-    object-fit: cover;
-    height: 100vh;
-  }
   .LoginContainer {
-    background-image: none;
     background-color: yellow;
-    overflow-y: hidden;
+    margin: 0 auto;
+    height: 100vh;
+    width: 100vw;
   }
 
   .hideNav {
@@ -20,7 +17,8 @@
   }
 
   .LoginForm {
-    margin: 12em 23em;
+    width: 100vw;
+    margin: 2em auto;
   }
 
   .aboutApp p {
@@ -65,31 +63,17 @@
   }
 
   .registerDiv {
-    margin: 0 6em;
+    margin: 0 2em;
     font-weight: 600;
   }
 }
 
 @media screen and (min-device-width: 350px) and (max-device-width: 575px) {
-  .largerScreenImg {
-    display: none;
-  }
-
-  .LoginContainer {
-    background-image: url("https://images.unsplash.com/photo-1508002366005-75a695ee2d17?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=617&q=80");
-    min-height: 100vh;
-    background-position: right -120px bottom -110px;
-    background-repeat: no-repeat;
-  }
-
   .LoginForm {
-    position: absolute;
-    bottom: 0;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+    height: 100vh;
+    width: 100vw;
+    margin: auto;
     background-color: yellow;
-    padding-top: 0.5em;
-    padding-bottom: 1.5em;
   }
 
   .userField {
@@ -110,7 +94,7 @@
   }
 
   .submit {
-    margin: 1em 2.5em 0 2.5em;
+    margin: 3em 2.5em 0 2.5em;
     border: 0;
     padding: 0.5em;
     border-radius: 5px;
@@ -141,24 +125,13 @@
 
   .aboutApp p {
     text-align: center;
+    margin: 0em;
     font-size: 1.3em;
     font-weight: 600;
-    margin-bottom: 0;
+    padding-top: 4em;
     color: rgb(66, 5, 116);
   }
   .hideNav {
     display: none;
-  }
-}
-
-@media screen and (min-device-width: 375px) and (max-device-width: 575px) {
-  .LoginForm {
-    width: 375px;
-  }
-}
-
-@media screen and (min-device-width: 360px) and (max-device-width: 575px) {
-  .LoginForm {
-    width: 360px;
   }
 }
